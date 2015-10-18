@@ -55,10 +55,11 @@ public class QLearning {
 		
 		//Q値の値の最大値が複数個ある場合、ランダム的に行動番号を選択
 		for(int i = 0; i < 4; i++) { 
-				if(qTable[state][i] > max)
-				{
+				if(qTable[state][i] >= max){
+					if(qTable[state][i] > max) {
 					max = qTable[state][i];
 					list.clear();
+					}
 				}
 				list.add(i);
 		}
